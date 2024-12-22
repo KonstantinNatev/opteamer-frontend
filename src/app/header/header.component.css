@@ -1,0 +1,32 @@
+.navbar_panel {
+    background-color: #ffffff;
+    margin-top: -1px;
+    box-shadow: 0 1px 2px 0 rgba(87, 84, 84, 0.1);
+}
+
+.navbar_brand_text {
+    color: #25a171;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 20em;
+}
+
+.navbar_link_container {
+    margin-left: 50em;
+    margin-right: 10em;
+}
+
+.navbar_link_text {
+    margin-right: 15px;
+}
+
+a {
+    color: #868a87;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #595d5a;
+}
