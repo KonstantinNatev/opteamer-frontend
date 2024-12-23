@@ -15,6 +15,12 @@
             >
                 <span class="navbar_link_text">Team members</span>
             </a>
+            <a
+                routerLink="/operation-types"
+                *ngIf="(isLoggedIn | async)"
+            >
+                <span class="navbar_link_text">Operation types</span>
+            </a>
             <a 
                 routerLink="/"
                 *ngIf="!(isLoggedIn | async)"

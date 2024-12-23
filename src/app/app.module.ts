@@ -13,12 +13,14 @@ import { canActivate } from './services/auth-guard.service';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { PatientsComponent } from './patients/patients.component';
 import { TeamMemberComponent } from './team-member/team-member.component';
+import { OperationTypeComponent } from './operation-type/operation-type.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'operations', component: OperationsComponent, canActivate: [canActivate]},
   { path: 'patients', component: PatientsComponent, canActivate: [canActivate]},
   { path: 'team-members', component: TeamMemberComponent, canActivate: [canActivate]},
+  { path: 'operation-types', component: OperationTypeComponent, canActivate: [canActivate]},
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     LoginComponent,
     OperationsComponent,
     PatientsComponent,
-    TeamMemberComponent
+    TeamMemberComponent,
+    OperationTypeComponent
   ],
   imports: [
     BrowserModule,
