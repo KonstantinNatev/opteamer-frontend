@@ -5,16 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { SingUpComponent } from './sing-up/sing-up.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OperationsComponent } from './operations/operations.component';
 import { canActivate } from './services/auth-guard.service';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
-  { path: 'signup', component: SingUpComponent},
   { path: 'operations', component: OperationsComponent, canActivate: [canActivate]},
 ]
 
@@ -23,7 +22,6 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    SingUpComponent,
     OperationsComponent
   ],
   imports: [
@@ -34,7 +32,13 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
