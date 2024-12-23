@@ -11,10 +11,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OperationsComponent } from './operations/operations.component';
 import { canActivate } from './services/auth-guard.service';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { PatientsComponent } from './patients/patients.component';
+import { TeamMemberComponent } from './team-member/team-member.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'operations', component: OperationsComponent, canActivate: [canActivate]},
+  { path: 'patients', component: PatientsComponent, canActivate: [canActivate]},
 ]
 
 @NgModule({
@@ -22,7 +25,9 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    OperationsComponent
+    OperationsComponent,
+    PatientsComponent,
+    TeamMemberComponent
   ],
   imports: [
     BrowserModule,
