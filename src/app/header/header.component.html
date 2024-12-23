@@ -3,8 +3,17 @@
         <p class="navbar_brand_text">Opteamer</p>
 
         <div class="navbar_link_container">
-            <a routerLink="/">
+            <a 
+                routerLink="/"
+                *ngIf="!(isLoggedIn | async)"
+            >
                 <span class="navbar_link_text">Login</span>
+            </a>
+            <a 
+                (click)="logout()"
+                *ngIf="(isLoggedIn | async)"
+            >
+                <span class="navbar_link_text">Logout</span>
             </a>
             <a routerLink="/signup">
                 <span class="navbar_link_text">Sing up</span>
