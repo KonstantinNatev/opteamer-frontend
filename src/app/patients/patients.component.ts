@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
   styleUrl: '../app.component.css'
 })
 export class PatientsComponent implements OnInit {
-
   patientForm: FormGroup;
   editedPatient:any;
   modalTitle: string;

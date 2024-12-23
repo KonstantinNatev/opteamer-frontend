@@ -18,6 +18,7 @@ const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'operations', component: OperationsComponent, canActivate: [canActivate]},
   { path: 'patients', component: PatientsComponent, canActivate: [canActivate]},
+  { path: 'team-members', component: TeamMemberComponent, canActivate: [canActivate]},
 ]
 
 @NgModule({

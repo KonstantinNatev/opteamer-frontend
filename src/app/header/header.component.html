@@ -9,6 +9,12 @@
             >
                 <span class="navbar_link_text">Patients</span>
             </a>
+            <a
+                routerLink="/team-members"
+                *ngIf="(isLoggedIn | async)"
+            >
+                <span class="navbar_link_text">Team members</span>
+            </a>
             <a 
                 routerLink="/"
                 *ngIf="!(isLoggedIn | async)"
