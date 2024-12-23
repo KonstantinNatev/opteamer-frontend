@@ -10,11 +10,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { OperationsComponent } from './operations/operations.component';
+import { canActivate } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'signup', component: SingUpComponent},
-  { path: 'operations', component: OperationsComponent},
+  { path: 'operations', component: OperationsComponent, canActivate: [canActivate]},
 ]
 
 @NgModule({
